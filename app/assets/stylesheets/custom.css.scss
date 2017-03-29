@@ -1,2 +1,61 @@
+$navbar-default-bg:#174038;
+	
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo{
+	float:left;
+	letter-spacing:-1px;
+	font-size:50px;
+}
+
+.navbar-default {
+
+min-height: 70px;
+
+width:100%;
+}
+
+#logo:hover{
+	color: #759B84;
+	text-decoration: none;
+}
+
+#bs-example-navbar-collapse-1{
+	font-size:25px;
+	padding:10px;
+}
+
+.center{
+	text-align:center;
+}
+
+.jumbotron{
+	background-image: asset-url('expresso.jpg');
+	background-size:cover;
+	height:550px;
+	margin-top: 100px;
+}
+.jumbotron h1{
+	padding:100px;
+	color:#816687;
+}
+
+#button{
+	background-color:#8968CD;
+}
+
+.well{
+	position:relative;
+	bottom:0;
+    background-color:  #8DB6CD;
+    width:100%;
+
+    
+}
+
+body{
+	background-color: #E8F1D4;
+}
