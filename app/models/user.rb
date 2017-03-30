@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
 											length: {minimum: 5 , maximum: 25},
 			                                format: {with: emailRegex}
 
+	has_secure_password		 
+
 end
