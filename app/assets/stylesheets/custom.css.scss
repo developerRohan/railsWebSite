@@ -47,15 +47,53 @@ width:100%;
 	background-color:#8968CD;
 }
 
-.well{
-	position:relative;
-	bottom:0;
-    background-color:  #8DB6CD;
-    width:100%;
 
-    
-}
 
 body{
-	background-color: #E8F1D4;
+	background-color: #FCFCFC	;
 }
+
+.errors{
+	background-color:#FFF8DC;
+	border : 1px solid #FFBBFF ;
+}
+.errors1{
+	background-color:#FFF8DC;
+}
+
+.footer{
+	bottom:0px;
+	background-color:#F5FFFA;
+}
+
+.article_actions{
+	border-top:1px solid #eaeaea;
+	padding-top: 5px;
+}
+
+.article_actions{
+	padding-top: 5px;
+}
+
+.description{
+	margin-top:0px;
+}
+
+.out{
+	width:auto;
+}
+
+
+
+#title{
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#description{
+	border-top:1px solid #eaeaea;
+	padding-top:15px;
+	padding-bottom:15px;
+
+}
+

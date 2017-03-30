@@ -1,13 +1,14 @@
 
-
-<% if @article.errors.any? %>
-<h2>the following errors have been addressed</h2>
-	<ul>
-	<% @article.errors.full_messages.each do|msg| %>
-	<li><%= msg %></li>
+<div class="errors">
+	<% if @article.errors.any? %>
+		<h2>the following errors have been addressed</h2>
+		<ul>
+			<% @article.errors.full_messages.each do|msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
 	<% end %>
-	</ul>
-<% end %>
+</div>
 <div class="row">
 	<div class="col-xs-12">
 		<%= form_for @article do |f| %>
@@ -25,7 +26,7 @@
 					<%= f.label :description %>
 				</div>
 				<div class="col-sm-8">
-					<%= f.text_area :description,rows: 8, class: "form-control", placeholder: "give body to your article" %>
+					<%= f.text_area :description,rows: 8, class: "form-control", placeholder: "give body to your ideas" %>
 				</div>
 			</div>
 			<br><br><br><br><br><br><br><br><br><br>
