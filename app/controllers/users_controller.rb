@@ -4,6 +4,10 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
+	def index
+
+	end
+
 	def create
 		#debugger
 		@user = User.new(user_params)
@@ -12,6 +16,22 @@ class UsersController < ApplicationController
 			redirect_to articles_path
 		else
 			render 'new'
+		end
+	end
+
+	def edit
+		@user = User.find(params[:id]);
+	end
+
+	def update
+		#debugger
+		@user = User.find(params[:id])
+		if @user.update(user_params)
+			flash[:success] = "updated Successfully"
+			redirect_to articles_path
+
+		else
+			render 'edit'
 		end
 	end
 

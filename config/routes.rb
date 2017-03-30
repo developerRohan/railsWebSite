@@ -3,9 +3,13 @@ Rails.application.routes.draw do
   root  'pages#home'
   get '/about' => 'pages#about'
   resources :articles
-  get 'signup' => 'users#new'
-  post 'users' => 'users#create'
-  #resources :users, except:[:new]
+  get '/users' => 'users#index'
+  # get '/users/:id' => 'users#show'
+  # get 'signup' => 'users#new'
+  # post '/users' => 'users#create'
+  # get  '/users/:id/edit' => 'users#edit'
+  # post '/users/:id/update' => 'users#update'
+  resources :users, except:[:new]
   #get '/articles' => 'articles#index'
   # get '/articles/new' => 'articles#new'
   # get '/articles/:id' => 'articles#show'
