@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root  'pages#home'
   get '/about' => 'pages#about'
   resources :articles
-
-  # get '/articles' => 'articles#index'
+  get 'signup' => 'users#new'
+  post 'users' => 'users#create'
+  #resources :users, except:[:new]
+  #get '/articles' => 'articles#index'
   # get '/articles/new' => 'articles#new'
   # get '/articles/:id' => 'articles#show'
   # post '/articles/create' => 'articles#create'
