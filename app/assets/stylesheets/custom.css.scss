@@ -6,6 +6,7 @@ $navbar-default-bg:#1F0000;
 @import "bootstrap";
 
 #logo{
+	color:#5FFB17;
 	float:left;
 	letter-spacing:-1px;
 	font-size:50px;
@@ -104,3 +105,70 @@ body{
 
 }
 
+.contain {
+  position: relative;
+  width: 60%;
+ margin-bottom:15px;
+ margin-left:35%
+}
+
+.image {
+border-radius:50%;
+background-color:#E9CFEC;
+ display: block;
+ width: 60%;
+ height:150px;
+}
+
+.overlay {
+border-radius:50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  width: 60%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color:#FDEEF4;
+}
+
+.contain:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: #9172EC;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+
+.content{
+  color: black;
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.floatingTop{
+	font-size: 48px;
+	position: fixed;
+	right: 18px;
+	bottom: 36px;
+	height: 37px;
+    overflow: hidden;
+}
+
+.floatingTop a {
+	text-decoration: none;
+	color:  #B1FB17;
+}

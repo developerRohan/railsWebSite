@@ -1,1 +1,19 @@
-<h1 class="center">listing all the articles</h1>
+<h1 class="center">listing all the users</h1>
+<!--<% @users.each do |user| %>
+<br>
+	<%= link_to user.username   , user_path(user) %>:
+	<%= pluralize(user.articles.count , "article") if user.articles %>
+	<br>
+<% end %> -->
+
+<% @users.each do |user| %>
+		<div class=" contain">
+					<div class="image"><div class="content"><%= user.username %></div>
+		
+		<div class="  overlay">
+		    <div class="text img-circle"><%= link_to pluralize(user.articles.count , "article"), user_path(user) %></div>
+		 </div>
+		</div>
+		</div>
+
+<% end %>

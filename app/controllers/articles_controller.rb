@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
 		#debugger
 		#render plain: params[:article].inspect
 		@article = Article.new(article_params)
-		@article.user = User.first	
+		@article.user = User.last	
 		if @article.save
 			flash[:notice] = "article was  succefully saved"
 			redirect_to article_path(@article)
