@@ -1,0 +1,35 @@
+<div class=" out container">
+
+  <% obj.each do |article| %>
+  <div class="center well">
+    <h4 id="title">TITLE:<%= article.title %></h4>
+    <h4 id="description">DESCRIPTION:<%= truncate(article.description , length:50) %></h4>
+    <div class="center article_details">
+        <small>createdBy: <%= article.user.username if article.user%><br>time:<%= time_ago_in_words(article.created_at) %> ago<br>lastUpdated:<%= time_ago_in_words(article.updated_at) %></small>
+    </div>
+    <br><br>
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-warning btn-md" data-toggle="modal" data-target="#myModal">readFullArticle</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p><%= article.description %></p>
+          </div>
+          <div class="modal-footer"> 	
+            <div class="article_actions-1">
+  			
+  				<%= link_to "go back to articles page" , articles_path, class:"btn btn-xs btn-success" %>
+  				<%= link_to "edit this article", edit_article_path(article),class:"btn btn-xs btn-primary"%>
+  				<%= link_to "delete this article", article_path(article),method: :delete,data:{confirm:"are you sure?"},class:"btn btn-xs btn-danger"%>
+  			</div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+  <% end %>
+
+</div>

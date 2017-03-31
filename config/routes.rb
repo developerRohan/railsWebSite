@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root  'pages#home'
   get '/about' => 'pages#about'
   resources :articles
-  get '/users' => 'users#index'
+  #get '/users' => 'users#index'
   # get '/users/:id' => 'users#show'
-  # get 'signup' => 'users#new'
+   get 'signup' => 'users#new'
   # post '/users' => 'users#create'
   # get  '/users/:id/edit' => 'users#edit'
   # post '/users/:id/update' => 'users#update'
