@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+	before_action :require_current_user , only: [:edit , :update , :destroy]
+
+
 	def new
 		@user = User.new
 	end
@@ -40,8 +43,20 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id]);
 	end
 
+	def destroy
+		@user = User.find(params[:id])
+		@user.destroy
+	end
+
 	private
 	def user_params
 		params.require(:user).permit(:username , :email , :password)
+	end
+
+	def require_current_user
+		if current_user != @user
+			flash[:danger] = "you are not allowed to do this :)"
+			redirect_to users_path
+		end
 	end
 end

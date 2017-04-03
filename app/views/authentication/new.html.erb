@@ -1,0 +1,29 @@
+<h1>welcome to login page</h1>
+
+<div class="row">
+	<div class="col-xs-12">
+		<%= form_for(:session , url: login_path) do |f| %>
+			<div class="form-group">
+				<div class="control-label col-sm-2">
+					<%= f.label :email %>
+				</div>
+				<div class="col-sm-8">
+					<%= f.text_field :email, class: "form-control", placeholder: "enter your email", autofocus: true %>
+				</div>
+			</div>
+			<br><br><br><br>
+			<div class="form-group">
+				<div class="control-label col-sm-2">
+					<%= f.label :password %>
+				</div>
+				<div class="col-sm-8">
+					<%= f.password_field :password, class: "form-control", placeholder: "enter your password" , autocomplete:"off" %>
+				</div>
+			</div>
+			<br><br><br><br>
+			<p style="margin-left:500px">
+				<%= f.submit "log in" , class: 'btn btn-primary btn-lg'%>
+			</p>
+		<% end %>
+	</div>
+</div>

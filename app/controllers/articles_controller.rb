@@ -1,6 +1,9 @@
 class ArticlesController < ApplicationController
 
 	before_action :set_article , only: [:edit , :update , :show , :destroy]
+	before_action :require_user , except: [:index , :show]
+	before_action :require_current_user , only: [:edit , :update , :destroy]
+
 	def index 
 		@articles = Article.all
 	end
@@ -27,7 +30,7 @@ class ArticlesController < ApplicationController
 		#debugger
 		#render plain: params[:article].inspect
 		@article = Article.new(article_params)
-		@article.user = User.last	
+		@article.user = current_user	
 		if @article.save
 			flash[:notice] = "article was  succefully saved"
 			redirect_to article_path(@article)
@@ -56,6 +59,13 @@ class ArticlesController < ApplicationController
 	def article_params
 		params.require(:article).permit(:title,:description)
 
+	end
+
+	def require_current_user
+		if current_user != @article.user
+			flash[:danger] = "you are not allowed to do this :)"
+			redirect_to articles_path
+		end
 	end
 
 end
