@@ -13,8 +13,8 @@ class AuthenticationController < ApplicationController
 			flash[:success] = "successfully logged in"
 			redirect_to user_path(user)
 		else
-			flash.now[:danger] = "there was something wrong with your login details"
-			redirect_to 'new'
+			flash[:danger] = "there was something wrong with your login details"
+			redirect_to login_path
 		end
 	end
 
