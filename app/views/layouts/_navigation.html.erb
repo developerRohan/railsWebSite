@@ -25,6 +25,9 @@
                 <% Category.all.each do |category| %>
                     <li class="center"><%= link_to category.name , category_path(category) %></li>
                 <% end %>
+                    <li class=" style center"><%= link_to "add a category" , new_category_path() %></li>
+                   
+                
             </ul>
           </div></li>
         <% if logged_in %>
