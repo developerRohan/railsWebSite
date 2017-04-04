@@ -16,7 +16,17 @@
       <ul class="nav navbar-nav">
         <li><%= link_to "arTicles" , articles_path %></li>
          <li><%= link_to "users" , users_path %></li>
-         <li><%= link_to "feeling Bored" , bored_path %></li>
+         <li><%= link_to "gettingBored" , bored_path %></li>
+         <li><div class="dropdown">
+            <button id="style" type="button" data-toggle="dropdown">categories
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+               <li class=" style center"> all categories</li>
+                <% Category.all.each do |category| %>
+                    <li class="center"><%= link_to category.name , category_path(category) %></li>
+                <% end %>
+            </ul>
+          </div></li>
         <% if logged_in %>
         <li><%= link_to "newArticle" , new_article_path %></li>
         <% end %>
@@ -46,4 +56,3 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<img src="">

@@ -3,7 +3,7 @@
   <% obj.each do |article| %>
   <div class="center well">
     <h4 id="title">TITLE:<%= article.title %></h4>
-    <h4 id="description">DESCRIPTION:<%= truncate(article.description , length:50) %></h4>
+    <h6><%= link_to 'know more about this article' , article_path(article) %></h6>
     <div class="center article_details">
         <small>createdBy: <%= article.user.username if article.user%><br>time:<%= time_ago_in_words(article.created_at) %> ago<br>lastUpdated:<%= time_ago_in_words(article.updated_at) %></small>
     </div>

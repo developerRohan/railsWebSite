@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 	end
 
 	def require_current_user
-		if current_user != @user
+		if current_user != User.find(current_user.id)
 			flash[:danger] = "you are not allowed to do this :)"
 			redirect_to users_path
 		end
