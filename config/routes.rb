@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   get '/login' => 'authentication#new'
   post '/login' => 'authentication#login'
   get '/logout' => 'authentication#logout'
+  resources :categories , except:[:destroy]
 
 end
