@@ -43,7 +43,13 @@ class ArticlesController < ApplicationController
 
 	def show
 		
+		@users = @article.likes
 	end
+
+	# def findUsers
+	# 	@article = Article.find(params[:id])
+	# 	@users = @article.likes
+	# end
 
 	def destroy
 		@article.destroy		
@@ -51,6 +57,9 @@ class ArticlesController < ApplicationController
 		redirect_to articles_path
 	end
 
+	def likedArticles
+		@articles = Article.all
+	end
 	
 
 	private 

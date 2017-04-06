@@ -1,0 +1,8 @@
+<div class="center">
+<h4>this article is liked by following users</h4>
+<% @users.each do |user| %>
+<% if User.find(user.user_id) != current_user %>
+<%= link_to User.find(user.user_id).username , user_path(User.find(user.user_id)) %><br>
+<% end %>
+<% end %>
+</div>

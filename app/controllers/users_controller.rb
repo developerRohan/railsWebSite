@@ -69,6 +69,22 @@ class UsersController < ApplicationController
 	end
 
 
+	def likes 
+
+    article_id = params[:article_id]
+    like = current_user.likes.where(article_id:article_id).first
+    if like
+      like.destroy
+    else
+      current_user.likes.create(article_id:article_id)
+    end
+
+    redirect_to articles_path
+	end
+
+	
+
+	
 
 	private
 	def user_params

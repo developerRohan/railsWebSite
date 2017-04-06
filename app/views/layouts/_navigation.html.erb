@@ -33,7 +33,9 @@
         <% if logged_in %>
         <li><%= link_to "newArticle" , new_article_path %></li>
         <li><%= link_to "log out" ,   logout_path %></li> 
-          <li>  <div class="dropdown">
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>  <div class="dropdown dropdownPlace">
                     <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">Your Profile
                         <span class="caret"></span></button>
                      <ul class="dropdown-menu">
@@ -41,13 +43,16 @@
                         <li><%= link_to "view your profile" , user_path(current_user) %></li>
                         <li><%= link_to "view yourFriends" , add_friends_path %></li>
                         <li><%= link_to "checkFriendRequests" , friends_path %></li>
+                        <li><%= link_to "likedArticles" , likedArticles_path %></li>
+                        
                       </ul>
                </div>
           </li>
+        </ul>
         <% else %>
         <li><%= link_to "log in" ,   login_path %></li>
          <% end %>
-      </ul>
+     
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

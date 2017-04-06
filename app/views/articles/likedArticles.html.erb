@@ -1,0 +1,22 @@
+<h1>Articles liked by <%= current_user.username %></h1>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>articleTitle</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+    	<% @articles.each do |article| %>
+			<% if current_user.likes.where(article_id: article.id).length>0 %>
+				<tr>
+					<td><%= link_to article.title , article_path(article) %></td>
+                    <td><%= link_to "downvote" , url_for(controller: :users ,action: :likes, article_id: article.id), method: :post , class: 'btn btn-warning btn-xs' %></td>
+                
+				</tr>
+        	<% end %>
+		<% end %>
+
+    </tbody>
+</table>

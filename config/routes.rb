@@ -26,6 +26,9 @@ Rails.application.routes.draw do
   get 'friends' => 'users#friends'
   get '/add_friends' => 'users#add_friends'
   post 'friend' => 'users#friend'
+  post 'likes' => 'users#likes'
+  get 'likedArticles' => 'articles#likedArticles'
+  # get 'findUsers' => 'articles#findUsers'
   
 
 end

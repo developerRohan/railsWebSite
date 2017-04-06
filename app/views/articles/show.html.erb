@@ -14,10 +14,25 @@
 			<% end %>
 
 				<%= link_to "go back to articles page" , articles_path, class:"btn btn-xs btn-success" %>
+				<% unless current_user.likes.where(article_id: @article.id).length>0 %>
+                <%= link_to "upvote" , url_for(controller: :users ,action: :likes, article_id: @article.id), method: :post , class: 'btn btn-primary btn-xs' %>
+                <% else %>
+                <%= link_to "downvote" , url_for(controller: :users ,action: :likes, article_id: @article.id), method: :post , class: 'btn btn-warning btn-xs' %>
+                <% end %>
+                </div>
+				</div>
+				
+				<div class="center">
+				<h4>this article is liked by following users</h4>
+                <% @users.each do |user| %>
+                <% if User.find(user.user_id) != current_user %>
+                <%= link_to User.find(user.user_id).username , user_path(User.find(user.user_id)) %><br>
+                <% end %>
+                <% end %>
+                </div>
 				
 			
-		</div>
-		</div>
+		
 
 		
 
