@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 	end
 
 	def index
-		@users = User.all
+		@users = User.where('id != ?', current_user)
 
 	end
 
@@ -47,6 +47,28 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@user.destroy
 	end
+
+
+	def friend
+		add_friend_id = params[:add_friend_id]
+		friendship = Friendship.where(:add_friend_id => add_friend_id , :friend_id => current_user.id).first
+		unless friendship
+			friendship = Friendship.create(:add_friend_id => add_friend_id , :friend_id => current_user.id)
+		else
+			friendship.destroy
+		end
+		 return redirect_to user_path(add_friend_id)
+	end
+
+	def friends
+		@users = current_user.friends
+	end
+
+	def add_friends
+		@users = current_user.add_friends
+	end
+
+
 
 	private
 	def user_params

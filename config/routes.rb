@@ -23,4 +23,9 @@ Rails.application.routes.draw do
   get '/logout' => 'authentication#logout'
   resources :categories , except:[:destroy]
 
+  get 'friends' => 'users#friends'
+  get '/add_friends' => 'users#add_friends'
+  post 'friend' => 'users#friend'
+  
+
 end

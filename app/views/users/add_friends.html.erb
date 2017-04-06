@@ -1,0 +1,23 @@
+<% @users.each do |user| %>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>userName</th>
+            <th>userEmail</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= user.username %></td>
+            <td><%= user.email %></td>
+            <td>
+               
+                <a class="teal-text"><%= link_to 'removeFriend' ,url_for(controller: :users , action: :friend , add_friend_id: user.id), method: :post , class: 'btn btn-danger btn-xs' %></a>
+                <a class="red-text"><i class="fa fa-times"></i></a>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<% end %>

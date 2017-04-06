@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
 
 	def index 
 		@articles = Article.all
+
 	end
 
 	def new
@@ -45,12 +46,12 @@ class ArticlesController < ApplicationController
 	end
 
 	def destroy
-		
 		@article.destroy		
 		flash[:notice] = "article was successfully deleted"
 		redirect_to articles_path
 	end
 
+	
 
 	private 
 	def set_article
